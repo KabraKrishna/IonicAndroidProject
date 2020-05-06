@@ -1,0 +1,40 @@
+// bottom navigation bar css property
+
+ion-tab-bar{
+    background: var(--ion-color-base-purple);
+    border-radius: 32px;
+    // width: 96% !important;
+    // margin-left: auto;
+    // margin-right: auto;
+}
+ion-icon{
+  zoom: 0.6;
+}
+ion-tab-button{
+    background: var(--ion-color-base-purple);
+    color: var(--ion-color-light);
+}
+ion-tab-button[aria-selected="true"]{
+    background: var(--ion-color-light);
+    color: var(--ion-color-base-purple);
+    
+}
+ion-tabs{
+    background: var(--ion-color-light);
+
+}
+// ion-tab-button[aria-selected="true"] ion-label{
+//     color: var(--ion-color-base-purple);
+//   //  transform: translate3d(0, -5px,0);
+// }
+
+// .tabs .tab-button[aria-selected="true"] .tab-button-icon {
+//     color: white;
+//     -webkit-transform: translate3d(0, -5px, 0);
+//     transform: translate3d(0, -5px, 0);
+//   }
+
+//   .tabs .tab-button-icon {
+//       color: #f2f2f2;
+//       padding-bottom: 3px;
+//   }

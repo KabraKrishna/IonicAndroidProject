@@ -1,0 +1,7 @@
+{
+  "name": "kghApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
