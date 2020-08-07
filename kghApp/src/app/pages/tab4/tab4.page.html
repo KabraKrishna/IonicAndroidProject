@@ -1,9 +1,31 @@
 <ion-content fullscreen="true" class="content-bg">
-  <ion-toolbar class="toolbar-bg">
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
-  <div class="toolbar-bg-after"></div>
+  <app-header></app-header>
+
+  <ion-searchbar animated showCancelButton="focus"  [(ngModel)]="searchElement"
+  class="search-bar-item" (ionChange)="filterItems()"></ion-searchbar>
+
+  <ion-content class="extra-content-scrollable" [scrollEvents]="true" (ionScrollStart)="logScrollStart()"
+    (ionScroll)="logScrolling($event)" (ionScrollEnd)="logScrollEnd()">
+
+    <ion-list class="content-List">
+          <ion-item class="content-item" *ngFor="let student of studentRecords">
+            <ion-avatar>
+              <img src="../../../assets/images/avatar1.png" alt="JD">
+            </ion-avatar>
+            <ion-col style="padding-left: 10px;">
+              <ion-label color="base-purple" style="font-size: 15px;">{{student.firstname}}&nbsp; {{student.lastname}}</ion-label>
+              <ion-chip color="base-purple" outline="true" class="custom-chip">
+                <ion-icon name="bed" color="base-occar"></ion-icon>
+                <ion-label color="base-occar">{{student.roomnumber}}</ion-label>
+                &nbsp;|&nbsp;
+                <ion-label color="base-pink">{{student.doj}}</ion-label>
+              </ion-chip>
+            </ion-col>
+
+            <ion-icon name="information-circle" color="base-purple"></ion-icon>
+          </ion-item>
+      
+    </ion-list>
+  </ion-content>
 
 </ion-content>

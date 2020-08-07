@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="246" height="242" viewBox="0 0 246 242">
+  <g id="Group_59" data-name="Group 59" transform="translate(-258 -270)">
+    <path id="Rectangle_41" data-name="Rectangle 41" d="M115,0h0A115,115,0,0,1,230,115v8a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0v-8A115,115,0,0,1,115,0Z" transform="translate(258 359)" fill="#fff"/>
+    <circle id="Ellipse_7" data-name="Ellipse 7" cx="60" cy="60" r="60" transform="translate(313 270)" fill="#9a1591"/>
+    <circle id="Ellipse_8" data-name="Ellipse 8" cx="45" cy="45" r="45" transform="translate(328 285)" fill="#fff"/>
+    <circle id="Ellipse_9" data-name="Ellipse 9" cx="50" cy="50" r="50" transform="translate(404 412)" fill="#9a1591"/>
+    <text id="_" data-name="+" transform="translate(454 484)" fill="#fff" font-size="100" font-family="AdobeDevanagari-Bold, Adobe Devanagari" font-weight="700"><tspan x="-27.539" y="0">+</tspan></text>
+  </g>
+</svg>

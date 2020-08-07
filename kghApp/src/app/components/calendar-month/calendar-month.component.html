@@ -1,0 +1,14 @@
+<ion-grid fixed class="ion-no-padding">
+  <ion-row>
+    <ion-col *ngFor="let weekDay of getWeekDayList()" class="ion-text-center">
+      <ion-label color="base-purple" [style.font-size]="25">{{weekDay}}</ion-label>
+    </ion-col>
+  </ion-row>
+
+  <ion-row *ngFor="let week of inputMonth">
+    <ion-col *ngFor="let day of week" (click)="seeEvent(day)" class="deselected-date-class"
+      [class.active]=" isDateSelected(day.day)">
+      <ion-label>{{getDate(day)}}</ion-label>
+    </ion-col>
+  </ion-row>
+</ion-grid>

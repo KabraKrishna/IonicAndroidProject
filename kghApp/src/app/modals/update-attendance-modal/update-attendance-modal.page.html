@@ -1,0 +1,59 @@
+<ion-content fullscreen="true" class="content-bg">
+  <div class="toolbar-bg">
+    <img src="../../../assets/images/logo-1.png" class="logo-class">
+    <ion-item class="header-item-class" lines="none" button (click)="dismissModal()">
+      <ion-icon name="close" color="base-purple" [style.zoom]="1.5"></ion-icon>
+    </ion-item>
+  </div>
+
+  <ion-grid fixed>
+
+    <ion-row style="padding: 2px;">
+      <ion-col size="6">
+        <ion-chip class="ion-no-margin" style="background: white;">
+          <ion-icon name="calendar" color="base-purple"></ion-icon>
+          <ion-datetime display-format="MMM DD, YYYY" value={{today}} color="base-pink" class="ion-no-padding">
+          </ion-datetime>
+        </ion-chip>
+      </ion-col>
+      <ion-col push="3.5">
+        <ion-button shape="round" size="small" color="base-purple" (click)="updateAttendance()">
+          Save
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list class="custom-list">
+    <ion-item *ngFor="let record of attendanceRecord" #singleStudentItem>
+      <ion-avatar>
+        <div class="custom-avatar-text-icon">
+          <ion-label color="light">{{getInitial(record.name)}}</ion-label>
+        </div>
+      </ion-avatar>
+      <ion-col style="margin-left: 10px;">
+        <ion-label style="font-size: 20px;" color="base-pink">{{record.name}}</ion-label>
+        <ion-label style="font-size: 15px;" color="base-pink">Room No - {{record.roomNo}}</ion-label>
+      </ion-col>
+      <ion-toggle checked="{{record.isPresent}}" (ionChange)="buttonToggled(record.name)"></ion-toggle>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+
+<!-- <ion-row *ngFor="let record of attendanceRecord"> 
+  <ion-col size="12">
+    <ion-item class="individual-item-class">
+      <ion-avatar>
+        <div class="custom-avatar-text-icon">
+          <ion-label color="light">{{getInitial(record.name)}}</ion-label>
+        </div>
+      </ion-avatar>
+      <ion-col style="margin-left: 10px;">
+        <ion-label style="font-size: 20px;" color="base-pink">{{record.name}}</ion-label>
+        <ion-label style="font-size: 15px;" color="base-pink">Room No - {{record.roomNo}}</ion-label>
+      </ion-col>
+      <ion-toggle class="toggle-button-class" checked="{{record.isPresent}}"></ion-toggle>
+    </ion-item>
+  </ion-col>
+</ion-row> -->

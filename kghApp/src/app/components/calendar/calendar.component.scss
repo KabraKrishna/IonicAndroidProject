@@ -1,0 +1,41 @@
+.calendar-header{
+    background: var(--ion-color-base-purple);
+    text-align: center;
+    margin-top: 8px;
+    border-radius: 0px 16px;
+}
+.selected-date-class{
+    text-align: center;
+   // padding: 5px;
+    border: 1px solid var(--ion-color-base-purple);
+    background-color: var(--ion-color-base-purple);
+    color: #fff;
+}
+.deselected-date-class{
+    text-align: center;
+   // padding: 5px;
+   color: var(--ion-color-base-purple)
+}
+.active{
+    background-color: var(--ion-color-base-pink);
+    color: #fff;
+}
+.temp-class{
+    text-align: center;
+  //  padding: 5px;
+}
+ion-row{
+    margin-left: 8px;
+    margin-right: 8px;
+}
+ion-col{
+    padding: 5px;
+}
+// ion-slide >:first-child {
+//     width: 100%;
+// }
+
+.custom-date-select{
+    margin: 0px 0px;
+    --background: rgba(255, 255, 255, 0);
+}

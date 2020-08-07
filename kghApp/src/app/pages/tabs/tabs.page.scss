@@ -3,20 +3,23 @@
 ion-tab-bar{
     background: var(--ion-color-base-purple);
     border-radius: 32px;
-    // width: 96% !important;
-    // margin-left: auto;
-    // margin-right: auto;
+    width: 92% !important;
+    height: 7%;
+    margin-left: auto;
+    margin-right: auto;
 }
-ion-icon{
-  zoom: 0.6;
+.nav-bar-icon-class{
+  zoom: 0.8;
 }
 ion-tab-button{
     background: var(--ion-color-base-purple);
     color: var(--ion-color-light);
+    border-radius: 32px;
 }
 ion-tab-button[aria-selected="true"]{
-    background: var(--ion-color-light);
+    background-color: var(--ion-color-light);
     color: var(--ion-color-base-purple);
+    transition: background-color 300ms ease-in-out;
     
 }
 ion-tabs{

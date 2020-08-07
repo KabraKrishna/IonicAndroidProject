@@ -1,0 +1,357 @@
+<ion-content fullscreen="true" class="content-bg">
+  <div class="toolbar-bg">
+    <ion-item class="header-item-class" lines="none" button (click)="dismissModal()">
+      <ion-icon name="arrow-back" color="base-purple" [style.zoom]="1.2"></ion-icon>
+    </ion-item>
+
+    <ion-title color="base-purple">Registration Form</ion-title>
+  </div>
+
+  <!-- Custom Pager -->
+  <div class="container-pager">
+    <div class="steps-pager">
+      <div class="step" id="zero">1</div>
+      <div class="step" id="one">2</div>
+      <div class="step" id="two">3</div>
+      <div class="step" id="three">4</div>
+      <div class="step" id="four">5</div>
+    </div>
+  </div>
+
+  <ion-slides #registrationSliser [options]="slidesOptions">
+    <!-- Basic Details -->
+    <ion-slide>
+      <ion-card>
+        <ion-item>
+          <ion-label color="base-purple">Basic Details</ion-label>
+          <ion-button fill="clear" slot="end" (click)="slideToNext()">
+            <ion-label>Next</ion-label>
+            <ion-icon name="chevron-forward" color="base-purple"></ion-icon>
+          </ion-button>
+        </ion-item>
+
+        <form class="form" [formGroup]="basicDetails">
+          <ion-grid fixed class="ion-no-padding ion-margin-top">
+            <ion-row>
+
+              <!-- First Name -->
+              <ion-col size="12">
+                <ion-label style="margin-left: 10px;" color="base-purple">First Name</ion-label>
+                <ion-label color="danger" style="margin-right: 10px; float: right;"
+                  *ngIf="validateInput(basicDetails.get('firstName'))">Field cannot be empty</ion-label>
+                <ion-item class="form-item" lines="none">
+                  <ion-input type="text" formControlName="firstName" placeholder="Enter your first name"
+                    color="base-purple">
+                  </ion-input>
+                  <ion-icon name="alert-circle" slot="end" color="danger"
+                    *ngIf="validateInput(basicDetails.get('firstName'))"></ion-icon>
+                </ion-item>
+              </ion-col>
+
+              <!-- Last Name -->
+              <ion-col size="12">
+                <ion-label style="margin-left: 10px;" color="base-purple">Last Name</ion-label>
+                <ion-label color="danger" style="margin-right: 10px; float: right;"
+                  *ngIf="validateInput(basicDetails.get('lastName'))">
+                  Field cannot be empty</ion-label>
+                <ion-item class="form-item" lines="none">
+                  <ion-input type="text" formControlName="lastName" placeholder="Enter your last name"
+                    color="base-purple"></ion-input>
+                  <ion-icon name="alert-circle" slot="end" color="danger"
+                    *ngIf="validateInput(basicDetails.get('lastName'))"></ion-icon>
+                </ion-item>
+              </ion-col>
+
+              <!-- Contact Number -->
+              <ion-col size="12">
+                <ion-label style="margin-left: 10px;" color="base-purple">Contact Number</ion-label>
+                <ion-label color="danger" style="margin-right: 10px; float: right;"
+                  *ngIf="validateInput(basicDetails.get('contactNumber'))">Field cannot be empty
+                </ion-label>
+                <ion-item class="form-item" lines="none">
+                  <ion-input type="Number" formControlName="contactNumber" placeholder="Enter your contact number"
+                    color="base-purple">
+                  </ion-input>
+                  <ion-icon name="alert-circle" slot="end" color="danger"
+                    *ngIf="validateInput(basicDetails.get('contactNumber'))"></ion-icon>
+                </ion-item>
+              </ion-col>
+
+              <!-- Institution Name -->
+              <ion-col size="12">
+                <ion-label style="margin-left: 10px;" color="base-purple">Institution Name</ion-label>
+                <ion-label color="danger" style="margin-right: 10px; float: right;"
+                  *ngIf="validateInput(basicDetails.get('institutionName'))">Field cannot be empty</ion-label>
+                <ion-item class="form-item" lines="none">
+                  <ion-input type="text" formControlName="institutionName" placeholder="Enter your Institution name"
+                    color="base-purple">
+                  </ion-input>
+                  <ion-icon name="alert-circle" slot="end" color="danger"
+                    *ngIf="validateInput(basicDetails.get('institutionName'))"></ion-icon>
+                </ion-item>
+              </ion-col>
+
+              <!-- Date of Birth -->
+              <ion-col size="12">
+                <ion-label style="margin-left: 10px;" color="base-purple">Date Of Birth</ion-label>
+                <ion-label color="danger" style="margin-right: 10px; float: right;"
+                  *ngIf="validateInput(basicDetails.get('dob'))">Field
+                  cannot be empty</ion-label>
+                <ion-item class="form-item" lines="none">
+                  <ion-input type="Date" color="base-purple" formControlName="dob"
+                    placeholder="Enter your DOB (DD/MM/YY)" color="base-purple">
+                  </ion-input>
+                  <ion-icon name="alert-circle" slot="end" color="danger"
+                    *ngIf="validateInput(basicDetails.get('dob'))"></ion-icon>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </form>
+      </ion-card>
+    </ion-slide>
+
+    <!-- Parent's Details -->
+    <ion-slide>
+      <ion-card>
+        <ion-item>
+          <ion-button fill="clear" slot="start" class="button-margin" (click)="slideToPrev()">
+            <ion-icon name="chevron-back" color="base-purple"></ion-icon>
+            <ion-label color="base-purple">Prev</ion-label>
+
+          </ion-button>
+          <ion-label class="label-class">Parent Details</ion-label>
+          <ion-button fill="clear" slot="end" class="button-margin" (click)="slideToNext()">
+            <ion-label color="base-purple">Next</ion-label>
+            <ion-icon name="chevron-forward" color="base-purple"></ion-icon>
+          </ion-button>
+        </ion-item>
+
+        <form class="form" [formGroup]="parentDetails">
+          <ion-grid fixed class="ion-no-padding ion-margin-top">
+            <ion-row>
+
+              <!-- Parent Name -->
+              <ion-col size="12">
+                <ion-label style="margin-left: 10px;" color="base-purple">Parent Name</ion-label>
+                <ion-label color="danger" style="margin-right: 10px; float: right;"
+                  *ngIf="validateInput(parentDetails.get('name'))">
+                  Field cannot be empty</ion-label>
+                <ion-item class="form-item" lines="none">
+                  <ion-input type="text" formControlName="name" placeholder="Enter Parent Name" color="base-purple">
+                  </ion-input>
+                  <ion-icon name="alert-circle" slot="end" color="danger"
+                    *ngIf="validateInput(parentDetails.get('name'))"></ion-icon>
+                </ion-item>
+              </ion-col>
+
+              <!-- Parent Contact Number -->
+              <ion-col size="12">
+                <ion-label style="margin-left: 10px;" color="base-purple">Parent Name</ion-label>
+                <ion-label color="danger" style="margin-right: 10px; float: right;"
+                  *ngIf="validateInput(parentDetails.get('name'))">
+                  Field cannot be empty</ion-label>
+                <ion-item class="form-item" lines="none">
+                  <ion-input type="text" formControlName="name" placeholder="Enter Parent Name" color="base-purple">
+                  </ion-input>
+                  <ion-icon name="alert-circle" slot="end" color="danger"
+                    *ngIf="validateInput(parentDetails.get('name'))"></ion-icon>
+                </ion-item>
+              </ion-col>
+
+              <!-- Residence Contact -->
+              <ion-col size="12">
+                <ion-label style="margin-left: 10px;" color="base-purple">Residence Contact</ion-label>
+                <ion-item class="form-item" lines="none">
+                  <ion-input type="text" formControlName="residenceContact" placeholder="Enter Residence Contact Number"
+                    color="base-purple"></ion-input>
+                </ion-item>
+              </ion-col>
+
+              <!-- Address -->
+              <ion-col size="12">
+                <ion-label style="margin-left: 10px;" color="base-purple">Address</ion-label>
+                <ion-label color="danger" style="margin-right: 10px; float: right;"
+                  *ngIf="validateInput(parentDetails.get('address'))">
+                  Field cannot be empty</ion-label>
+                <ion-item class="form-item" lines="none">
+                  <ion-input type="text" formControlName="address" placeholder="House No, Lane, Street"
+                    color="base-purple"></ion-input>
+                  <ion-icon name="alert-circle" slot="end" color="danger"
+                    *ngIf="validateInput(parentDetails.get('address'))"></ion-icon>
+                </ion-item>
+              </ion-col>
+
+              <!-- City -->
+              <ion-col size="12">
+                <ion-label style="margin-left: 10px;" color="base-purple">City</ion-label>
+                <ion-label color="danger" style="margin-right: 10px; float: right;"
+                  *ngIf="validateInput(parentDetails.get('city'))">
+                  Field cannot be empty</ion-label>
+                <ion-item class="form-item" lines="none">
+                  <ion-input type="text" formControlName="city" placeholder="Enter your City" color="base-purple">
+                  </ion-input>
+                  <ion-icon name="alert-circle" slot="end" color="danger"
+                    *ngIf="validateInput(parentDetails.get('city'))"></ion-icon>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </form>
+      </ion-card>
+    </ion-slide>
+
+    <!-- Guardina's Details -->
+    <ion-slide>
+      <ion-card>
+        <ion-item>
+          <ion-button fill="clear" slot="start" class="button-margin" (click)="slideToPrev()">
+            <ion-icon name="chevron-back" color="base-purple"></ion-icon>
+            <ion-label color="base-purple">Prev</ion-label>
+
+          </ion-button>
+          <ion-label class="label-class">Guardina Details</ion-label>
+          <ion-button fill="clear" slot="end" class="button-margin" (click)="slideToNext()">
+            <ion-label color="base-purple">Next</ion-label>
+            <ion-icon name="chevron-forward" color="base-purple"></ion-icon>
+          </ion-button>
+        </ion-item>
+
+        <form class="form" [formGroup]="guardianDetails">
+          <ion-grid fixed class="ion-no-padding ion-margin-top">
+            <ion-row>
+
+              <!-- Guardian Name -->
+              <ion-col size="12">
+                <ion-label style="margin-left: 10px;" color="base-purple">Guardian Name</ion-label>
+                <ion-label color="danger" style="margin-right: 10px; float: right;"
+                  *ngIf="validateInput(guardianDetails.get('name'))">
+                  Field cannot be empty</ion-label>
+                <ion-item class="form-item" lines="none">
+                  <ion-input type="text" formControlName="name" placeholder="Enter Guardian Name" color="base-purple">
+                  </ion-input>
+                  <ion-icon name="alert-circle" slot="end" color="danger"
+                    *ngIf="validateInput(guardianDetails.get('name'))"></ion-icon>
+                </ion-item>
+              </ion-col>
+
+              <!-- Guardian Contact Number -->
+              <ion-col size="12">
+                <ion-label style="margin-left: 10px;" color="base-purple">Guardian contact Number</ion-label>
+                <ion-label color="danger" style="margin-right: 10px; float: right;"
+                  *ngIf="validateInput(guardianDetails.get('contactNumber'))">Field cannot be empty</ion-label>
+                <ion-item class="form-item" lines="none">
+                  <ion-input type="Number" formControlName="contactNumber" placeholder="Enter Guardian's contact number"
+                    color="base-purple"></ion-input>
+                  <ion-icon name="alert-circle" slot="end" color="danger"
+                    *ngIf="validateInput(guardianDetails.get('contactNumber'))"></ion-icon>
+                </ion-item>
+              </ion-col>
+
+              <!-- Address -->
+              <ion-col size="12">
+                <ion-label style="margin-left: 10px;" color="base-purple">Address</ion-label>
+                <ion-label color="danger" style="margin-right: 10px; float: right;"
+                  *ngIf="validateInput(guardianDetails.get('address'))">
+                  Field cannot be empty</ion-label>
+                <ion-item class="form-item" lines="none">
+                  <ion-input type="text" formControlName="address" placeholder="House No, Lane, Street"
+                    color="base-purple"></ion-input>
+                  <ion-icon name="alert-circle" slot="end" color="danger"
+                    *ngIf="validateInput(guardianDetails.get('address'))"></ion-icon>
+                </ion-item>
+              </ion-col>
+
+              <!-- City -->
+              <ion-col size="12">
+                <ion-label style="margin-left: 10px;" color="base-purple">City</ion-label>
+                <ion-label color="danger" style="margin-right: 10px; float: right;"
+                  *ngIf="validateInput(guardianDetails.get('city'))">
+                  Field cannot be empty</ion-label>
+                <ion-item class="form-item" lines="none">
+                  <ion-input type="text" formControlName="city" placeholder="Enter your City" color="base-purple">
+                  </ion-input>
+                  <ion-icon name="alert-circle" slot="end" color="danger"
+                    *ngIf="validateInput(guardianDetails.get('city'))"></ion-icon>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </form>
+      </ion-card>
+    </ion-slide>
+
+    <!-- Profile Photo -->
+    <ion-slide>
+      <ion-card>
+        <ion-item>
+          <ion-button fill="clear" slot="start" class="button-margin" (click)="slideToPrev()">
+            <ion-icon name="chevron-back" color="base-purple"></ion-icon>
+            <ion-label color="base-purple">Prev</ion-label>
+
+          </ion-button>
+          <ion-label class="label-class">Profile Photo</ion-label>
+          <ion-button fill="clear" slot="end" class="button-margin" (click)="slideToNext()">
+            <ion-label color="base-purple">Next</ion-label>
+            <ion-icon name="chevron-forward" color="base-purple"></ion-icon>
+          </ion-button>
+        </ion-item>
+
+        <form class="form" [formGroup]="guardianDetails">
+          <ion-grid fixed class="ion-no-padding ion-margin-top">
+            <ion-row>
+              <ion-col size="12">
+                <div class="picture-container">
+                  <img src="../../../assets/images/logo-1.png" class="profile-picture" *ngIf="isprofilePicContent" />
+                  <div class="alt-div" *ngIf="!isprofilePicContent">
+                    <ion-icon name="camera" color="base-purple" style="zoom: 4.0;" (click)="openCamera()"></ion-icon>
+                    <p>Upload your profile picture.</p>
+                  </div>
+                </div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+
+            </ion-row>
+          </ion-grid>
+        </form>
+      </ion-card>
+    </ion-slide>
+
+    <!-- Document Details -->
+    <ion-slide>
+      <ion-card>
+        <ion-item>
+          <ion-button fill="clear" slot="start" class="button-margin" (click)="slideToPrev()">
+            <ion-icon name="chevron-back" color="base-purple"></ion-icon>
+            <ion-label color="base-purple">Prev</ion-label>
+
+          </ion-button>
+          <ion-label class="label-class">Document Details</ion-label>
+          <ion-button fill="clear" slot="end" class="button-margin" (click)="slideToNext()">
+            <ion-label color="base-purple">Next</ion-label>
+            <ion-icon name="chevron-forward" color="base-purple"></ion-icon>
+          </ion-button>
+        </ion-item>
+
+        <form class="form" [formGroup]="guardianDetails">
+          <ion-grid fixed class="ion-no-padding ion-margin-top">
+
+          </ion-grid>
+        </form>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+
+
+
+</ion-content>
+
+<!-- (ngSubmit)="onSubmit(validations_form.value)" -->
+<!-- <form class="form" [formGroup]="validations_form">
+  <ion-item class="form-item" lines="none">
+    <ion-icon name="person-circle" color="base-purple" style="zoom: 1.5;"></ion-icon>
+    <ion-input type="text" formControlName="name" style="--padding-start: 10px;"
+    placeholder="Enter your first name"></ion-input>
+  </ion-item>
+</form> -->

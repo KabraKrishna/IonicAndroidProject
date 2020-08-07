@@ -1,9 +1,63 @@
 <ion-content fullscreen="true" class="content-bg">
-  <ion-toolbar class="toolbar-bg">
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
-  <div class="toolbar-bg-after"></div>
+  <div class="toolbar-bg">
+    <img src="../../../assets/images/logo-1.png" class="logo-class">
+    <ion-item class="header-item-class" lines="none">
+      <ion-icon name="power" color="base-purple" [style.zoom]="1.3"></ion-icon>
+    </ion-item>
+  </div>
+  <ion-grid class="ion-margin-top">
+    <!-- Update Attendance -->
+    <ion-row class="flex-row ion-justify-content-evenly">
+      <ion-col size="12">
+        <ion-item line="none" class="custom-item" button (click)="presentVacancyModal()">
+          <ion-title color="light">View Vacancies</ion-title>
+          <ion-icon name="caret-down-circle" color="light" [style.zoom]="1.2"></ion-icon>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <!-- Available Vaciencies -->
+    <ion-row>
+      <ion-col size="12">
+        <ion-item line="none" class="custom-item" button (click)="presentAttendanceModal()">
+          <ion-title color="light">Update Attendance</ion-title>
+          <ion-icon name="caret-down-circle" color="light" [style.zoom]="1.2"></ion-icon>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <!-- Forms row 1 -->
+    <ion-row class="ion-justify-content-center align-content-center ion-margin-top">
+      <ion-col size="6">
+        <ion-card button="true" (click)="navigateTo('Registration')" class="card-right-margin-none">
+            <ion-icon src="../../../assets/images/add-user-icon.svg" [style.zoom]="5.0"></ion-icon>
+            <ion-card-subtitle color="light">Registration Form</ion-card-subtitle>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="6">
+        <ion-card button="true" (click)="navigateTo('Leave')" class="card-left-margin-none">
+            <ion-icon src="../../../assets/images/leave-application-icon.svg" [style.zoom]="5.0"></ion-icon>
+            <ion-card-subtitle color="light">Leave Application Form</ion-card-subtitle>
+        </ion-card>
+    </ion-col>
+    </ion-row>
+
+    <!-- Forms row 2 -->
+    <ion-row class="ion-justify-content-center align-content-center ion-no-margin">
+      <ion-col size="6">
+        <ion-card button="true" (click)="navigateTo('Payment')" class="card-right-margin-none">
+            <ion-icon src="../../../assets/images/payment-form-icon.svg" [style.zoom]="5.0"></ion-icon>
+            <ion-card-subtitle color="light">Payment Form</ion-card-subtitle>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card button="true" (click)="navigateTo('Exit')" class="card-left-margin-none">
+            <ion-icon src="../../../assets/images/hostel-leaving-app-icon.svg" [style.zoom]="5.0"></ion-icon>
+            <ion-card-subtitle color="light">Hostel-Leaving Form</ion-card-subtitle>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>

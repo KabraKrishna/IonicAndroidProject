@@ -1,30 +1,34 @@
-.toolbar-bg{
-    border-radius: 0px 0px 0px 30px;
-    height: 10%;
- }
- .toolbar-bg-after{
- 
-     content: "";
-     width: 10%;
-     height: 5%;
-     background: #fff;
-     float: right;
-     // left: 95%;
-     // top: 95%;
-     overflow: hidden;
-   //  border-radius: 0 100% 0 0;
- 
-  }
-  .toolbar-bg-after:before{
-     content: '';
-     width: 10%;
-     height: 5%;
-     background: rgba(177,206,248,0.9);
-     position: absolute;
-     top: 10%;
-     right: 0;
-     border-radius: 0 100% 0 0;
-  }
- .content-bg{
+.content-bg{
      --background: linear-gradient(to bottom,rgb(177,206,248),rgb(255, 255, 255));
+ }
+ .search-bar-item{
+    --border-radius: 32px;
+    --cancel-button-color: var(--ion-color-base-purple);
+    --clear-button-color: var(--ion-color-base-purple);
+    --color: var(--ion-color-base-purple);
+    --icon-color: var(--ion-color-base-purple);
+    --placeholder-color: var(--ion-color-base-purple);
+ }
+ .content-List{
+    background-color: rgba($color: #fff, $alpha: 0.0);
+    margin: 0px;
+    padding: 1px 5px;
+}
+.extra-content-scrollable{
+    max-height: 80%;
+    --padding-top: 5px;
+    --background: rgba($color: #fff, $alpha: 0.0);
+}
+.content-item{
+    --background: rgba($color: #fff, $alpha: 0.0);
+   box-shadow: 0px 1px 1px var(--ion-color-base-purple);
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+.custom-chip{
+    zoom: 0.8;
+    font-size: 16px;
+    margin: 0px;
+    border: 1px solid transparent;
+    padding: 5px;
  }

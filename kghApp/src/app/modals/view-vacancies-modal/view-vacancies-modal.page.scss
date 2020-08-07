@@ -1,0 +1,67 @@
+.toolbar-bg{
+    background-color: #fff;
+    border-radius: 0px 0px 0px 30px;
+    height: 10%;
+    position: relative;
+    overflow: visible;
+    display: flex;
+    justify-content: space-between;
+    
+ }
+ .toolbar-bg:before{
+    display: block;
+    position: absolute;
+    content: "";
+     width: 9%;
+     height: 50%;
+     background: rgb(255, 255, 255);
+     left: 91%;
+     top: 98%;
+ }
+ .toolbar-bg:after{
+    display: block;
+    position: absolute;
+    content: "";
+    width: 10%;
+    height: 50%;
+    background:#0D73FC;
+    left: 90%;
+    top: 100%;
+    border-radius: 0 100% 0 0;
+ 
+ }
+ .logo-class{
+   width: 15%;
+    height: 80%;
+    margin-left: 16px;
+    margin-top: 8px;
+    margin-bottom: auto;
+}
+ .header-item-class{
+    //@extend: 15%;
+     height: 100%;
+     top: 6px;
+ }
+ .content-bg{
+    --background: linear-gradient(to bottom left,#046BFF,#97E9D0);
+    
+}
+ .indicator-card-class{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+ }
+ 
+.room-card{
+   margin: 10px 5px 0px 5px;
+   text-align: center;
+   font-size: 15px;
+}
+.room-card-header{
+   padding: 6px;
+}
+.room-card-content{
+   padding: 0px;
+   font-size: 30px;
+}

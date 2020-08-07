@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="396" height="381" viewBox="0 0 396 381">
+  <g id="Group_57" data-name="Group 57" transform="translate(-50 -390)">
+    <g id="Group_55" data-name="Group 55">
+      <circle id="Ellipse_13" data-name="Ellipse 13" cx="175" cy="175" r="175" transform="translate(50 390)" fill="#fff"/>
+      <circle id="Ellipse_12" data-name="Ellipse 12" cx="100" cy="100" r="100" transform="translate(246 565)" fill="#fff"/>
+    </g>
+    <g id="Ellipse_14" data-name="Ellipse 14" transform="translate(261 580)" fill="#9a1591" stroke="#9a1591" stroke-width="15">
+      <circle cx="85" cy="85" r="85" stroke="none"/>
+      <circle cx="85" cy="85" r="77.5" fill="none"/>
+    </g>
+    <text id="_" data-name="+" transform="translate(350 715)" fill="#fff" font-size="200" font-family="AdobeDevanagari-Bold, Adobe Devanagari" font-weight="700"><tspan x="-55.078" y="0">+</tspan></text>
+    <g id="Group_56" data-name="Group 56" transform="translate(-19 13)">
+      <line id="Line_5" data-name="Line 5" y1="108" transform="translate(252.532 462.5)" fill="none" stroke="#9a1591" stroke-linecap="round" stroke-width="15"/>
+      <line id="Line_6" data-name="Line 6" x1="85.032" y2="48" transform="translate(167.5 570.5)" fill="none" stroke="#9a1591" stroke-linecap="round" stroke-width="15"/>
+    </g>
+  </g>
+</svg>

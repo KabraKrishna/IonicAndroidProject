@@ -1,0 +1,122 @@
+{
+    "attendance" : {
+      "03April2020" : {
+        "student1" : true,
+        "student2" : false,
+        "student3" : false
+      },
+      "04April2020" : {
+        "student1" : true,
+        "student2" : true,
+        "student3" : false
+      }
+    },
+    "guardian-details" : {
+      "student1" : {
+        "address" : "lane 4, new high street, washington",
+        "guardiancontact" : "091873625749",
+        "guardianname" : "stuart"
+      }
+    },
+    "leave-applications" : {
+      "03April2020" : {
+        "student1" : {
+          "address" : "none",
+          "contactnumber" : "0123456789",
+          "leaveenddate" : "06April2020",
+          "leavestartdate" : "04April2020",
+          "name" : "Andrew",
+          "visiting" : "home"
+        }
+      }
+    },
+    "parent-details" : {
+      "student1" : {
+        "address" : "flat no 105, street 4, new york",
+        "fathercontact" : 9876543210,
+        "idproof" : "/bin/home/bcfg.jpeg",
+        "parentname" : "Andrew Doe",
+        "residencecontact" : "0240-123456"
+      }
+    },
+    "payment-details" : {
+      "03April2020" : [ {
+        "student1" : {
+          "amount" : 2500,
+          "mode" : "cash",
+          "paymentfor" : "April2020",
+          "remark" : " ",
+          "roomnumber" : 1
+        }
+      } ]
+    },
+    "room-details" : {
+      "room1" : {
+        "capacity" : 2,
+        "members" : [ "student1", "student2" ]
+      },
+      "room10" : {
+        "capacity" : 3,
+        "members" : "empty"
+      },
+      "room11" : {
+        "capacity" : 3,
+        "members" : "empty"
+      },
+      "room12" : {
+        "capacity" : 7,
+        "members" : "empty"
+      },
+      "room13" : {
+        "capacity" : 4,
+        "members" : "empty"
+      },
+      "room2" : {
+        "capacity" : 2,
+        "members" : "empty"
+      },
+      "room3" : {
+        "capacity" : 2,
+        "members" : [ "student3" ]
+      },
+      "room4" : {
+        "capacity" : 2,
+        "members" : "empty"
+      },
+      "room5" : {
+        "capacity" : 2,
+        "members" : "empty"
+      },
+      "room6" : {
+        "capacity" : 2,
+        "members" : "empty"
+      },
+      "room7" : {
+        "capacity" : 2,
+        "members" : "empty"
+      },
+      "room8" : {
+        "capacity" : 3,
+        "members" : "empty"
+      },
+      "room9" : {
+        "capacity" : 3,
+        "members" : [ "student4", "student5" ]
+      }
+    },
+    "student-records" : {
+      "student1" : {
+        "contactnumber" : "0123456789",
+        "dob" : "03/12/1994",
+        "doj" : "12/03/2019",
+        "duration" : "2 years",
+        "firstname" : "John",
+        "idproof" : "/bin/home/abcd.jpeg",
+        "institutionname" : "St xavire school of arts",
+        "lastname" : "Doe",
+        "roomnumber" : 4,
+        "status" : true
+      }
+    }
+  }
+  

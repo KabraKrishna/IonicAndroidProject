@@ -1,0 +1,44 @@
+.toolbar-bg{
+    background-color: #fff;
+    border-radius: 0px 0px 0px 30px;
+    height: 10%;
+    position: relative;
+    overflow: visible;
+    display: flex;
+    justify-content: space-between;
+    
+ }
+.header-item-class{
+    //@extend: 15%;
+     height: 100%;
+     top: 6px;
+ }
+ .logo-class{
+    width: 15%;
+     height: 80%;
+     margin-left: 16px;
+     margin-top: 8px;
+     margin-bottom: auto;
+ }
+ .toolbar-bg:before{
+    display: block;
+    position: absolute;
+    content: "";
+     width: 9%;
+     height: 50%;
+     background: rgb(255, 255, 255);
+     left: 91%;
+     top: 98%;
+ }
+ .toolbar-bg:after{
+    display: block;
+    position: absolute;
+    content: "";
+    width: 10%;
+    height: 50%;
+    background: rgb(189, 214, 248);
+    left: 90%;
+    top: 100%;
+    border-radius: 0 100% 0 0;
+ 
+ }

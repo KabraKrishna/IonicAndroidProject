@@ -1,9 +1,94 @@
-<ion-content fullscreen="true" class="content-bg">
-  <ion-toolbar class="toolbar-bg">
-    <ion-title>
-      Tab 2
-    </ion-title>
-  </ion-toolbar>
-  <div class="toolbar-bg-after"></div>
+<ion-content fullscreen="true" class="content-bg" [scrollEvents]="true">
+  <app-header></app-header>
+  <app-calendar></app-calendar>
+
+  <ion-segment color="light" class="custom-segment" value="Transactions">
+    <ion-segment-button value="Transactions" (click)="swipeSlide('Transactions')">
+      <ion-label color="light">Transactions</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="Reports" (click)="swipeSlide('Reports')">
+      <ion-label color="light">Reports</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <ion-content class="extra-content-scrollable" [scrollEvents]="true" (ionScrollStart)="logScrollStart()"
+    (ionScroll)="logScrolling($event)" (ionScrollEnd)="logScrollEnd()">
+
+    <ion-slides #slider [options]="swiperOptions">
+      <ion-slide>
+        <ion-list class="content-List">
+          <ion-item class="content-item" *ngFor="let i of [1,2,3,4,5,6,7,8]">
+            <ion-avatar>
+              <div class="custom-avatar-text-icon">
+                <ion-label color="light">JD</ion-label>
+              </div>
+            </ion-avatar>
+            <ion-col style="padding-left: 10px;">
+              <ion-label color="base-purple" style="font-size: 20px;">John Doe</ion-label>
+              <ion-chip color="base-purple" outline="true" class="custom-chip">
+                <ion-icon name="bed" color="base-occar"></ion-icon>
+                <ion-label color="base-occar">04</ion-label>
+                &nbsp;|&nbsp;
+                <ion-label color="base-pink">May, 17 2020</ion-label>
+              </ion-chip>
+            </ion-col>
+            <ion-label color="success" style="font-size: 20px; text-align: end;
+            margin-right: 10px;">2000</ion-label>
+            <ion-icon src='../../../assets/icon/rupee-icon.svg' color="base-purple" style="zoom: 0.7;"></ion-icon>
+          </ion-item>
+        </ion-list>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-list class="content-List">
+          <ion-item class="content-item" *ngFor="let i of [1,2,3,4,5,6,7,8]">
+            <ion-avatar>
+              <div class="custom-avatar-text-icon">
+                <ion-label color="light">AJ</ion-label>
+              </div>
+            </ion-avatar>
+            <ion-col style="padding-left: 10px;">
+              <ion-label color="base-purple" style="font-size: 20px;">Anderson Jones</ion-label>
+              <ion-chip color="base-purple" outline="true" class="custom-chip">
+                <ion-icon name="bed" color="base-occar"></ion-icon>
+                <ion-label color="base-occar">01</ion-label>
+                &nbsp;|&nbsp;
+                <ion-label color="base-pink">May, 18 2020</ion-label>
+              </ion-chip>
+            </ion-col>
+            <ion-label color="success" style="font-size: 20px; text-align: end;
+            margin-right: 10px;">3500</ion-label>
+            <ion-icon src='../../../assets/icon/rupee-icon.svg' color="base-purple" style="zoom: 0.7;"></ion-icon>
+          </ion-item>
+        </ion-list>
+      </ion-slide>
+    </ion-slides>
+
+
+  </ion-content>
 
 </ion-content>
+
+<!-- 
+  <ion-list class="content-List">
+      <ion-item class="content-item" *ngFor="let i of [1,2,3,4,5,6,7,8]">
+        <ion-avatar>
+          <div class="custom-avatar-text-icon">
+            <ion-label color="light">JD</ion-label>
+          </div>
+        </ion-avatar>
+        <ion-col style="padding-left: 10px;">
+          <ion-label color="base-purple" style="font-size: 20px;">John Doe</ion-label>
+          <ion-chip color="base-purple" outline="true" class="custom-chip">
+            <ion-icon name="bed" color="base-occar"></ion-icon>
+            <ion-label color="base-occar">04</ion-label>
+            &nbsp;|&nbsp;
+            <ion-label color="base-pink">May, 17 2020</ion-label>
+          </ion-chip>
+        </ion-col>
+        <ion-label color="success" style="font-size: 20px; text-align: end;
+        margin-right: 10px;">2000</ion-label>
+        <ion-icon src='../../../assets/icon/rupee-icon.svg' color="base-purple"
+        style="zoom: 0.7;"></ion-icon>
+      </ion-item>   
+    </ion-list>
+ -->

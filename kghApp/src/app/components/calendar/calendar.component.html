@@ -1,0 +1,133 @@
+<!-- <ion-grid fixed class="ion-no-padding">
+
+  <ion-row>
+    <ion-col size="12">
+      <ion-item lines="none" class="calendar-header" color="base-purple">
+        <ion-button fill="clear" (click)="back()" style="margin-left: -4px;">
+          <ion-icon name="chevron-back" slot="icon-only" color="light"></ion-icon>
+        </ion-button>
+        <ion-button fill="clear" (click)="next()" style="margin-left: -10px;">
+          <ion-icon name="chevron-forward" slot="icon-only" color="light"></ion-icon>
+        </ion-button>
+
+        <ion-label style="text-align: start;">{{getMonth(selectedMonth)}},&nbsp;{{selectedYear}}</ion-label>
+
+        <ion-button [color]="calendarMode.modeType !== 'month' ? 'base-pink' : 'base-occar'"
+          (click)="changeMode('month')">
+          <ion-icon src="../../../assets/icon/M.svg" color="light"></ion-icon>
+        </ion-button>
+        <ion-button [color]="calendarMode.modeType !== 'week' ? 'base-pink' : 'base-occar'"
+          (click)="changeMode('week')">
+          <ion-icon src="../../../assets/icon/W.svg" color="light"></ion-icon>
+        </ion-button>
+        <ion-button [color]="calendarMode.modeType !== 'custom' ? 'base-pink' : 'base-occar'"
+          (click)="changeMode('custom')">
+          <ion-icon src="../../../assets/icon/C.svg" color="light"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+</ion-grid>
+<ion-grid fixed class="ion-no-padding">
+  <ion-row>
+    <ion-col *ngFor="let weekDay of getWeekDayList()" class="ion-text-center">
+      <ion-label color="base-purple" [style.font-size]="25">{{weekDay}}</ion-label>
+    </ion-col>
+  </ion-row>
+
+  <ion-row *ngFor="let week of weeks">
+    <ion-col *ngFor="let day of week" (click)="seeEvent(day)" class="deselected-date-class"
+      [class.active]=" isDateSelected(day.day)">
+      <ion-label>{{getDate(day)}}</ion-label>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+-->
+
+<!-- <ion-row>
+  <ion-col size="4">
+    <ion-button expand="block" [color]="calendar.mode == 'month' ? 'primary' : 'secondary'" (click)="changeMode('month')">Month</ion-button>
+  </ion-col>
+  <ion-col size="4">
+    <ion-button expand="block" [color]="calendar.mode == 'week' ? 'primary' : 'secondary'" (click)="changeMode('week')">Week</ion-button>
+  </ion-col>
+  <ion-col size="4">
+    <ion-button expand="block" [color]="calendar.mode == 'day' ? 'primary' : 'secondary'" (click)="changeMode('day')">Day</ion-button>
+  </ion-col>
+</ion-row> -->
+
+<ion-grid fixed class="ion-no-padding">
+
+  <ion-row>
+    <ion-col size="12">
+      <ion-item lines="none" class="calendar-header" color="base-purple">
+
+        <ion-button fill="clear" (click)="back()" style="margin-left: -4px;" 
+        disabled="{{isDisabled}}" *ngIf="calendarMode.modeType !== 'custom'">
+          <ion-icon name="chevron-back" slot="icon-only" color="light"></ion-icon>
+        </ion-button>
+
+        <ion-button fill="clear" (click)="next()" style="margin-left: -10px;" 
+        disabled="{{isDisabled}}" *ngIf="calendarMode.modeType !== 'custom'">
+          <ion-icon name="chevron-forward" slot="icon-only" color="light"></ion-icon>
+        </ion-button>
+
+        <ion-label style="text-align: start;" *ngIf="calendarMode.modeType === 'month'">
+          {{getMonth(selectedMonth)}},&nbsp;{{selectedYear}}</ion-label>
+
+        <ion-label style="text-align: start;" *ngIf="calendarMode.modeType === 'week'">
+          Week&nbsp;-&nbsp;{{weekIndex + 1}}</ion-label>
+
+          <ion-label style="text-align: start;" *ngIf="calendarMode.modeType === 'custom'">
+            Select Date</ion-label>
+
+        <ion-button [color]="calendarMode.modeType !== 'month' ? 'base-pink' : 'base-occar'"
+          (click)="changeMode('month')">
+          <ion-icon src="../../../assets/icon/M.svg" color="light"></ion-icon>
+        </ion-button>
+        <ion-button [color]="calendarMode.modeType !== 'week' ? 'base-pink' : 'base-occar'"
+          (click)="changeMode('week')">
+          <ion-icon src="../../../assets/icon/W.svg" color="light"></ion-icon>
+        </ion-button>
+        <ion-button [color]="calendarMode.modeType !== 'custom' ? 'base-pink' : 'base-occar'"
+          (click)="changeMode('custom')">
+          <ion-icon src="../../../assets/icon/C.svg" color="light"></ion-icon>
+        </ion-button>
+
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+</ion-grid>
+
+<app-calendar-month *ngIf="calendarMode.modeType === 'month'" [inputMonth]="weeks" [inputDate]="selectedDate">
+</app-calendar-month>
+
+<app-calendar-week *ngIf="calendarMode.modeType === 'week'" [inputWeek]="week" [inputDate]="selectedDate">
+</app-calendar-week>
+
+<ion-item *ngIf="calendarMode.modeType === 'custom'" class="custom-date-select" lines="none">
+  
+
+  <ion-chip style="background: rgba(255, 255, 255, 0.507);">
+    <ion-icon name="today" color="base-purple"></ion-icon>
+    <ion-datetime display-format="DD.MM.YYYY" value={{todaysDate}} 
+    class="ion-no-padding" style="color: #9A1591;">
+    </ion-datetime>
+  </ion-chip>
+
+  <ion-label class="ion-text-center" color="base-purple">To</ion-label>
+
+
+  <ion-chip style="background: rgba(255, 255, 255, 0.507);">
+    <ion-icon name="today" color="base-purple"></ion-icon>
+    <ion-datetime display-format="DD.MM.YYYY" value={{todaysDate}} 
+    class="ion-no-padding" style="color: #9A1591;">
+    </ion-datetime>
+  </ion-chip>
+  
+    <ion-icon name="chevron-forward-circle" color="base-purple" slot="end"></ion-icon>
+
+</ion-item>

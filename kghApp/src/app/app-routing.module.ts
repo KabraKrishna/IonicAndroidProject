@@ -7,8 +7,20 @@ const routes: Routes = [
     loadChildren: () => import('./pages/tabs/tabs.module').then(m => m.TabsPageModule)
   },
   {
-    path: 'tab4',
-    loadChildren: () => import('./pages/tab4/tab4.module').then( m => m.Tab4PageModule)
+    path: 'view-vacancies-modal',
+    loadChildren: () => import('./modals/view-vacancies-modal/view-vacancies-modal.module').then( m => m.ViewVacanciesModalPageModule)
+  },
+  {
+    path: 'update-attendance-modal',
+    loadChildren: () => import('./modals/update-attendance-modal/update-attendance-modal.module').then( m => m.UpdateAttendanceModalPageModule)
+  },
+  {
+    path: 'registration-form',
+    loadChildren: () => import('./pages/registration-form/registration-form.module').then( m => m.RegistrationFormPageModule)
+  },
+  {
+    path: 'leave-application-form',
+    loadChildren: () => import('./pages/leave-application-form/leave-application-form.module').then( m => m.LeaveApplicationFormPageModule)
   }
 ];
 @NgModule({
